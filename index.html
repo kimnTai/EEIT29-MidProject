@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <!-- BS5 CSS -->
+    <link rel="stylesheet" href="scss/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+
+</head>
+
+<body>
+    <!-- 頭 -->
+
+    <header class="pt-1 bg-secondary sticky-top">
+        <div class="container">
+            <div class="navbar">
+                <div class="container-fluid ">
+                    <!-- logo -->
+                    <a href=""><img src="./img/logo.png" height="50"></a>
+                    <div class="d-flex">
+                        <a class="btn bi-cart-fill btn-warning rounded-pill px-4 me-2" href="#CartList"></a>
+                        <button class="btn fw-bold btn-warning rounded-pill px-4 me-2" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">登入</button>
+                        <button class="btn fw-bold btn-light rounded-pill px-4 d-none d-sm-block" data-bs-toggle="modal"
+                            data-bs-target="#signupModal">註冊</button>
+                    </div>
+                </div>
+                </ㄎ>
+            </div>
+    </header>
+    <!-- 登入 -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content border-0 border-top border-warning border-3">
+                <div class="modal-header ">
+                    <h5 class="modal-title fw-bold" id="loginModalLabel">登入</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="accountInput" class="form-label">帳號</label>
+                            <input type="text" class="form-control" id="accountInput" aria-describedby="emailHelp"
+                                placeholder="請輸入註冊信箱">
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordInput" class="form-label">密碼</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="請輸入登入密碼">
+                        </div>
+                        <a href="#" class="text-secondary mb-3 d-block">忘記密碼?</a>
+                        <button type="button" class="btn btn-warning rounded-pill fs-4 fw-bold w-100 mb-3"
+                            data-bs-toggle="modal" data-bs-target="#BusyModal" data-bs-dismiss="modal">登入</button>
+                    </form>
+                    <div class="position-relative my-4">
+                        <div class="progress" style="height: 2px;">
+                            <div class="progress-bar bg-light" style="width: 100%" role="progressbar" aria-valuenow="0"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p
+                            class="d-flex position-absolute top-0 start-50 translate-middle text-dark fw-bold bg-white p-2">
+                            還沒有帳號？<a href="#" class="text-danger" data-bs-toggle="modal" data-bs-dismiss="modal"
+                                data-bs-target="#signupModal">註冊一個帳號</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 註冊 -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content border-0 border-top border-warning border-3">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="loginModalLabel">註冊</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="signupAccountInput" class="form-label">帳號</label>
+                            <input type="text" class="form-control" id="signupAccountInput" aria-describedby="emailHelp"
+                                placeholder="請輸入常用的電子信箱">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="passwordInput" class="form-label">密碼</label>
+                            <input type="password" class="form-control" id="signupPasswordInput"
+                                placeholder="密碼至少６位英文或數字">
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordInput" class="form-label">確認密碼</label>
+                            <input type="password" class="form-control" id="signupPasswordInput_2"
+                                placeholder="兩次密碼需相符">
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                登入註冊即代表您同意使用者及隱私權政策
+                            </label>
+                        </div>
+
+                        <button type="button" class="btn btn-warning rounded-pill fs-4 fw-bold w-100 mb-3"
+                            data-bs-toggle="modal" data-bs-target="#BusyModal" data-bs-dismiss="modal">註冊</button>
+                    </form>
+                    <div class="position-relative my-4">
+                        <div class="progress" style="height: 2px;">
+                            <div class="progress-bar bg-light" style="width: 100%" role="progressbar" aria-valuenow="0"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p
+                            class="d-flex position-absolute top-0 start-50 translate-middle text-dark fw-bold bg-white p-2">
+                            已經有帳號了嗎？<a href="#" class="text-danger" data-bs-toggle="modal" data-bs-dismiss="modal"
+                                data-bs-target="#loginModal">登入</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 輪播 -->
+    <div class="bg-aero">
+        <div class="container">
+            <div id="carouselExampleCaptions" class="carousel slide p-2" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
+                </div>
+                <ul class="carousel-inner">
+                    <li class="carousel-item active">
+                        <img src="./img/01.png" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4><mark>Duis sollicitudin malesuada.</mark></h4>
+                            <p>喜的有沒有終前道，我覺得我的所有人？好好的怎麼樣開過來回是什麼。那到我要先真的好。</p>
+                        </div>
+                    </li>
+                    <li class="carousel-item">
+                        <img src="./img/02.png" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4><mark>Praesent pulvinar vitae ligula.</mark></h4>
+                            <p>走我是不好戀愛可愛男性，人什麼快樂不是都畫如果是，子我可以覺不沒問題來如此。</p>
+                        </div>
+                    </li>
+                    <li class="carousel-item">
+                        <img src="./img/03.png" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4><mark>Etiam vel auctor felis Aenean.</mark></h4>
+                            <p>然後果沒問題我，象他就法這麼多的或是這樣的好：來我雷我真了這感覺房間時我。</p>
+                        </div>
+                    </li>
+                </ul>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- 中段 -->
+    <div class="inter bg-secondary ">
+        <div class="container text-light text-center p-5 ">
+            <div>
+                <h4>2002 年仲夏，季洋咖啡在田中央孕育台灣精品咖啡傳奇展開了序章。</h4>
+                <p>
+                    季洋咖啡始終相信「一杯好咖啡，70% 來自於好咖啡豆」
+                    因此我們在咖啡烘焙上下足了功夫，堅持日式慢烘手法
+                    讓咖啡風味層次更加豐富，讓所有人更能感受到精品咖啡的魅力。
+                </p>
+            </div>
+            <div>
+                <h4>採用業界少見的【日式慢烘法】</h4>
+                <p>
+                    此法的優點是利用低壓、低溫去烘透豆心，去除「生澀味」
+                    獲取原豆最大的甜度與醇厚感，讓咖啡豆的風味更有層次感，保鮮期也較長。
+                    但缺點是烘豆時間長，生豆水分蒸發較多、容易失重，成本付出相對較大，
+                    因此業界甚少採用。17年來季洋咖啡一本初衷，堅持品質、不惜成本 💥💥
+                    只為將最好的咖啡呈現給消費者 💪💪</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 內容 上 -->
+    <div class="main bg-aero">
+        <div class="container">
+            <div class="row p-5">
+                <div class="col-md-12">
+                    <div class="row">
+                        <!-- 左選單 -->
+                        <div class="col-md-3">
+                            <div class="list-group sticky-top mb-3 d-none d-sm-block" style="top: 82px;">
+                                <a href="#" class="list-group-item list-group-item-action active fs-5">醇香咖啡</a>
+                                <a href="#" class="list-group-item list-group-item-action">濃情可可</a>
+                                <a href="#" class="list-group-item list-group-item-action">花果茶世界</a>
+                                <a href="#" class="list-group-item list-group-item-action">職人甜點</a>
+                            </div>
+                        </div>
+                        <!-- 右內容 -->
+                        <div class="col-md-9" id="menu">
+                            <div class="row">
+                                <!-- v-for -->
+                                <div class="col-md-6 mb-3" v-for="item in productionList">
+                                    <div class="card text-center">
+                                        <img class="card-img-top img-thumbnail p-1" alt="" :src="item.image" />
+                                        <div class="card-block mt-2 p-2">
+                                            <h3 class="card-title">
+                                                {{item.name}}
+                                            </h3>
+                                            <p class="card-text text-truncate ">
+                                                {{item.content}}
+                                            </p>
+                                            <div class="d-flex justify-content-between align-items-baseline p-2">
+                                                <del class="h5 fst-italic">原價 ${{item.price}}</del>
+                                                <div class="h3 text-danger">特價 ${{item.price*discount}}</div>
+                                            </div>
+                                            <div class="card-footer bg-secondary">
+                                                <button type="button" data-bs-toggle="modal" data-bs-target="#addModal"
+                                                    @click="addToCart(item.id,item.name,item.image,item.price)"
+                                                    class="btn btn-warning btn-block card-btn rounded-pill px-4 me-4 fs-6">
+                                                    加到購物車
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 置底分頁 -->
+                            <nav>
+                                <ul id="page" class="pagination d-flex d-flex justify-content-center pt-3">
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 加入 -->
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h3 class="modal-title"></h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="h5 text-secondary fw-bold text-center"><i class="bi bi-check-circle"></i>商品已加入購物車</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 內容 下 -->
+    <div class="bg-secondary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="" id="CartList">
+                        <h3 class="text-center text-light p-3">購物車清單</h3>
+                        <table class="table table-sm text-light">
+                            <thead class="">
+                                <tr>
+                                    <th width="60"></th>
+                                    <th width="200" class="d-none d-sm-table-cell">Coffee Name</th>
+                                    <th>商品名稱</th>
+                                    <th width="60">數量</th>
+                                    <th width="140" class="text-right">小計</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- v-for -->
+                                <tr v-for="item in CartList">
+                                    <td class="align-middle ">
+                                        <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#removeModal" @click="delFromCart(item.id)">
+                                            <i class="bi bi-trash"></i></button>
+                                    </td>
+                                    <td class="align-middle d-none d-sm-table-cell p-3"><img :src="item.image"
+                                            width="160" alt="" class="img-thumbnail"></td>
+                                    <td class="align-middle">
+                                        {{item.name}}
+                                    </td>
+                                    <td class="align-middle">{{item.quantity}} 杯</td>
+                                    <td class="align-middle text-right">${{item.quantity*item.price*discount}}</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="d-none d-sm-table-row">
+                                    <td colspan="4" class="h3 text-right">總計</td>
+                                    <td class="h3 text-right p-3"><strong>${{total(discount)}}</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="input-group input-group-sm mt-3"><input type="text" placeholder="請輸入優惠碼"
+                            class="form-control">
+                        <div class="input-group-append"><button type="button" class="btn btn-warning">
+                                套用優惠碼
+                            </button></div>
+                    </div>
+                    <a href="#" class="btn btn-warning btn-block btn-lg card-btn my-3">
+                        <i class="bi bi-person"></i>建立訂單
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- 刪除 -->
+    <div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="removeModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h3 class="modal-title"></h3> <!-- 標題 -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="h5 text-secondary fw-bold text-center"><i class="bi bi-trash-fill"></i>商品已從購物車刪除</p>
+                </div>
+                <!-- <div class="modal-footer"><button type="button" data-dismiss="modal"
+                        class="btn btn-secondary btn-sm">取消</button><button type="submit"
+                        class="btn btn-outline-danger btn-sm">確認刪除</button></div> -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 置底 -->
+    <footer class="footer bg-aero text-light">
+        <div class="container">
+            <div class="copyright p-3">
+                <p>At vero eos et accusamus et iusto odio dignissimos.</p>
+                <p>facilis est et expedita distinctio.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- 忙碌中 湊著用 -->
+    <div class="modal fade" id="BusyModal" tabindex="-1" aria-labelledby="BusyModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger">
+                    <h3 class="modal-title"></h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="h5 text-secondary fw-bold text-center"><i class="bi bi-x-lg"></i>伺服器忙碌中，請稍候再試。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./js/data.js"></script>
+
+    <script>
+
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    isShowingCart: false,
+                    discount: 0.8,  // 折扣
+                    coupon: "123",
+                    pageNum: 2,
+                    // quantity: 1,    // 購物數量
+                    CartList: [],
+                    OrderList: [],
+                };
+            },
+            created() {
+                this.productionList = results;  // 傳入資料
+            },
+            methods: {
+
+                // 加入購物車
+                addToCart(id, name, image, price) {
+                    // 先看購物車中 是否有該商品
+                    const prd = this.CartList.find(item => item.id === id)
+                    if (prd) {
+                        //如果有 數量 +1
+                        prd.quantity++
+                        return
+                    }
+                    // 如果沒有
+                    this.CartList.push({
+                        id,
+                        name,
+                        image,
+                        price,
+                        quantity: 1
+                    })
+                },
+
+                // 從購物車刪除
+                delFromCart(id) {
+                    this.CartList = this.CartList.filter(
+                        item => item.id !== id
+                    )
+                },
+                // 計算總價
+                total(discount) {
+                    var totalinCart = 0;
+                    for (var i in this.CartList) {
+                        var attr = this.CartList[i];
+                        totalinCart += parseInt(attr.quantity * attr.price);
+                    }
+                    return totalinCart * discount;
+                },
+            },
+        }).mount('body')
+    </script>
+
+</body>
+
+</html>
